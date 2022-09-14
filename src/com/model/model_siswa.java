@@ -53,31 +53,31 @@ public class model_siswa implements controller_siswa {
 
     @Override
     public void Ubah(form_siswa siswa) throws SQLException {
-//         if (siswa.rbLaki.isSelected()){
-//           jk = "Laki-laki";
-//       } else {
-//           jk = "Perempuan";
-//       }
-//       try {
-//           Connection con = koneksi.getcon();
-//           String sql = "UPDATE siswa SET nama=?, jenis_kelamin=?," 
-//                   + "jurusan=? WHERE NIS=?";
-//           PreparedStatement prepare = con.prepareStatement(sql);
-//           prepare.setString(1, siswa.txtNIS.getText());
-//           prepare.setString(2, siswa.txtNama.getText());
-//           prepare.setString(3, jk);
-//           prepare.setString(4, (String) siswa.cbJurusan.getSelectedItem());
-//           prepare.executeUpdate();
-//           JOptionPane.showMessageDialog(null, "Data Berhasil diubah");
-//           prepare.close();
-//           Baru(siswa);
-//       } catch (Exception e) {
-//           System.out.println(e);
-//       } finally {
-//           Tampil(siswa);
-//           siswa.setLebarKolom();
-//           Baru(siswa);
-//       }
+         if (siswa.rbLaki.isSelected()){
+           jk = "Laki-laki";
+       } else {
+           jk = "Perempuan";
+       }
+       try {
+           Connection con = koneksi.getcon();
+           String sql = "UPDATE siswa SET nama=?, jenis_kelamin=?," 
+                   + "jurusan=? WHERE NIS=?";
+           PreparedStatement prepare = con.prepareStatement(sql);
+           prepare.setString(1, siswa.txtNIS.getText());
+           prepare.setString(2, siswa.txtNama.getText());
+           prepare.setString(3, jk);
+           prepare.setString(4, (String) siswa.cbJurusan.getSelectedItem());
+           prepare.executeUpdate();
+           JOptionPane.showMessageDialog(null, "Data Berhasil diubah");
+           prepare.close();
+           Baru(siswa);
+       } catch (Exception e) {
+           System.out.println(e);
+       } finally {
+           Tampil(siswa);
+           siswa.setLebarKolom();
+           Baru(siswa);
+       }
     }
 
     @Override
